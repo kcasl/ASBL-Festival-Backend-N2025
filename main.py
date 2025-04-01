@@ -1,6 +1,5 @@
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
-import random as r
 import secrets
 import crud
 import schemas
@@ -93,54 +92,13 @@ def stock_init():
 def get_news():
     return news_return[-1]
 
-@app.post("/buy_stock1", tags=["매도 / 매수"])
-def buy_stock1(user: schemas.Stock1_SB, db: Session = Depends(get_db)):
-    return crud.buy_stock1c(db, user)
+@app.post("/stock_trade", tags=["매도 / 매수"])
+def stock_trade(user: schemas.Stocks, db: Session = Depends(get_db)):
+    return crud.stock_trade(db, user)
 
-@app.post("/sell_stock1", tags=["매도 / 매수"])
-def sell_stock1(user: schemas.Stock1_SB, db: Session = Depends(get_db)):
-    return crud.sell_stock1c(db, user)
-
-@app.post("/buy_stock2", tags=["매도 / 매수"])
-def buy_stock1(user: schemas.Stock2_SB, db: Session = Depends(get_db)):
-    return crud.buy_stock2c(db, user)
-
-@app.post("/sell_stock2", tags=["매도 / 매수"])
-def sell_stock1(user: schemas.Stock2_SB, db: Session = Depends(get_db)):
-    return crud.sell_stock2c(db, user)
-
-@app.post("/buy_stock3", tags=["매도 / 매수"])
-def buy_stock1(user: schemas.Stock3_SB, db: Session = Depends(get_db)):
-    return crud.buy_stock3c(db, user)
-
-@app.post("/sell_stock3", tags=["매도 / 매수"])
-def sell_stock1(user: schemas.Stock3_SB, db: Session = Depends(get_db)):
-    return crud.sell_stock3c(db, user)
-
-@app.post("/buy_stock4", tags=["매도 / 매수"])
-def buy_stock1(user: schemas.Stock4_SB, db: Session = Depends(get_db)):
-    return crud.buy_stock4c(db, user)
-
-@app.post("/sell_stock4", tags=["매도 / 매수"])
-def sell_stock1(user: schemas.Stock4_SB, db: Session = Depends(get_db)):
-    return crud.sell_stock4c(db, user)
-
-@app.get("/stock1", tags=["주가 변동 관리"])
-def stock_price1():
-    return stock1_return
-
-@app.get("/stock2", tags=["주가 변동 관리"])
-def stock_price2():
-    return stock2_return
-
-@app.get("/stock3", tags=["주가 변동 관리"])
-def stock_price3():
-    return stock3_return
-
-@app.get("/stock4", tags=["주가 변동 관리"])
-def stock_price4():
-    return stock4_return
-
+@app.get("/stock_price_change", tags=["주가 변동 관리"])
+def stock_price_change():
+    return price_list_update()
 
 @app.get("/start-timer")
 def start_timer():

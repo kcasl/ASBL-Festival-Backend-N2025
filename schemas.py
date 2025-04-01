@@ -17,25 +17,15 @@ class Money(BaseModel):
     std_id: str
     capital: float
 
-class Stock1_SB(BaseModel):
+class Stocks(BaseModel):
     std_id: str
     token: str
-    stock1: int
-
-class Stock2_SB(BaseModel):
-    std_id: str
-    token: str
-    stock2: int
-
-class Stock3_SB(BaseModel):
-    std_id: str
-    token: str
-    stock3: int
-
-class Stock4_SB(BaseModel):
-    std_id: str
-    token: str
-    stock4: int
+    #주식 code => 삼성 양성자 : 0 / 에스게이 : 1 / GL : 2 / 오이 : 3
+    code : int
+    #매수 / 매도할 주식 개수
+    stock_num: int
+    #매수 : 0 / 매도 : 1
+    mode: int
 
 # class UserUpdate(BaseModel):
 #     capital: float = None
