@@ -98,7 +98,7 @@ def stock_trade(user: schemas.Stocks, db: Session = Depends(get_db)):
 
 @app.get("/stock_price_change", tags=["주가 변동 관리"])
 def stock_price_change():
-    return price_list_update()
+    return [stock1_return[-1],stock2_return[-1],stock3_return[-1],stock4_return[-1]]
 
 @app.get("/get_all_stock_price", tags=["주가 변동 관리"])
 def get_all_stock_price():
