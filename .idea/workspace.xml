@@ -217,7 +217,7 @@
       <workItem from="1729773605409" duration="60000" />
       <workItem from="1730997897701" duration="94000" />
       <workItem from="1743482927626" duration="11078000" />
-      <workItem from="1743514011622" duration="428000" />
+      <workItem from="1743514011622" duration="734000" />
     </task>
     <servers />
   </component>
@@ -240,17 +240,17 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/stock_price_management.py</url>
-          <line>134</line>
+          <line>135</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/stock_price_management.py</url>
-          <line>163</line>
+          <line>164</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/stock_price_management.py</url>
-          <line>193</line>
+          <line>194</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
