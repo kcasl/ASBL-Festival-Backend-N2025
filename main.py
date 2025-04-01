@@ -100,6 +100,10 @@ def stock_trade(user: schemas.Stocks, db: Session = Depends(get_db)):
 def stock_price_change():
     return price_list_update()
 
+@app.get("/get_all_stock_price", tags=["주가 변동 관리"])
+def get_all_stock_price():
+    return [stock1_return,stock2_return,stock3_return,stock4_return]
+
 @app.get("/start-timer")
 def start_timer():
     global start_time
